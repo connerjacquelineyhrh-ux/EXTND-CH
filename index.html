@@ -16,10 +16,65 @@
     
 
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-   
     
+
+    <style>
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("inter-regular.woff2") format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("inter-medium.woff2") format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Inter Display';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("") format('woff2');
+  }
+
+  body {
+    background: #000000;
+  }
+
+  @keyframes app-loading-pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+  }
+
+  #app-loading-img {
+    display: block;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: app-loading-pulse 2s ease-in-out infinite;
+  }
+
+  /* Убраны правила, скрывающие #root */
+  /* html[data-app-state='loading'] #root { display: none; } */
+</style>
+
+   <script>
+  window.addEventListener('load', () => {
+    document.documentElement.removeAttribute('data-app-state');
+  });
+</script>
+ 
     
     
     <link rel="stylesheet" href="index-6qNBGj_G.css">
